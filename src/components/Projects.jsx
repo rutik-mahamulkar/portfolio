@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { FiGithub, FiExternalLink, FiCode, FiLayers, FiCheckCircle, FiZap } from 'react-icons/fi'
 import { HiSparkles, HiTag } from 'react-icons/hi'
 import {
-  SiPhp, SiHtml5, SiMysql, SiJavascript,
+  SiPhp, SiHtml5, SiMysql, SiJavascript, SiPython, SiFlask,
 } from 'react-icons/si'
 import { FaCss3Alt } from 'react-icons/fa'
 
@@ -13,13 +13,19 @@ const TECH_ICONS = {
   CSS:        { icon: <FaCss3Alt />,    color: '#1572b6' },
   JavaScript: { icon: <SiJavascript />, color: '#f7df1e' },
   MySQL:      { icon: <SiMysql />,      color: '#00aff0' },
+  Python:     { icon: <SiPython />,     color: '#3776ab' },
+  Flask:      { icon: <SiFlask />,      color: '#e2e8f0' },
 }
 
 const FEATURE_ICONS = {
-  'CRUD Operations':      { icon: <FiLayers />,      color: '#6c63ff' },
-  'Form Validation':      { icon: <FiCheckCircle />, color: '#22c55e' },
-  'Database Integration': { icon: <FiCode />,        color: '#3b82f6' },
-  'Inventory Management': { icon: <FiZap />,         color: '#f59e0b' },
+  'CRUD Operations':        { icon: <FiLayers />,      color: '#6c63ff' },
+  'Form Validation':        { icon: <FiCheckCircle />, color: '#22c55e' },
+  'Database Integration':   { icon: <FiCode />,        color: '#3b82f6' },
+  'Inventory Management':   { icon: <FiZap />,         color: '#f59e0b' },
+  'ML Prediction Model':    { icon: <FiZap />,         color: '#a78bfa' },
+  'Data Visualization':     { icon: <FiCode />,        color: '#3b82f6' },
+  'Interactive Web UI':     { icon: <FiLayers />,      color: '#6c63ff' },
+  'Real-time Prediction':   { icon: <FiCheckCircle />, color: '#22c55e' },
 }
 
 const PROJECTS = [
@@ -40,7 +46,7 @@ const PROJECTS = [
       'Inventory Management',
     ],
     tech: ['PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
-    github: 'https://github.com/rutik-mahamulkar',
+    github: 'https://github.com/rutik-mahamulkar/PlantPulse',
     color: '#22c55e',
     accentColor: '#16a34a',
     gradient: 'linear-gradient(135deg, #052e16 0%, #14532d 50%, #166534 100%)',
@@ -59,6 +65,42 @@ const PROJECTS = [
       { indent: 0, w: 55, c: '#22c55e' },
     ],
   },
+  {
+    id: 'placement-predictor',
+    title: 'Student Placement Predictor',
+    subtitle: 'ML-Powered Prediction Web App',
+    emoji: '🎓',
+    category: 'Machine Learning',
+    status: 'Completed',
+    year: '2025',
+    description:
+      'Built a machine learning web application that predicts student placement chances based on academic performance, skills, and other factors. Uses a trained ML model served via Flask with an interactive frontend.',
+    features: [
+      'ML Prediction Model',
+      'Data Visualization',
+      'Interactive Web UI',
+      'Real-time Prediction',
+    ],
+    tech: ['Python', 'Flask', 'HTML', 'CSS', 'JavaScript'],
+    github: 'https://github.com/rutik-mahamulkar/student-placement-predictor',
+    color: '#a78bfa',
+    accentColor: '#7c3aed',
+    gradient: 'linear-gradient(135deg, #1e0a4a 0%, #2d1b69 50%, #4c1d95 100%)',
+    stats: [
+      { label: 'ML Model',   value: '1' },
+      { label: 'Accuracy',   value: '85%' },
+      { label: 'Features',   value: '8+' },
+    ],
+    lines: [
+      { indent: 0, w: 75, c: '#c4b5fd' },
+      { indent: 1, w: 55, c: '#a78bfa' },
+      { indent: 1, w: 80, c: '#c4b5fd' },
+      { indent: 2, w: 45, c: '#7c3aed' },
+      { indent: 2, w: 60, c: '#a78bfa' },
+      { indent: 1, w: 35, c: '#c4b5fd' },
+      { indent: 0, w: 65, c: '#7c3aed' },
+    ],
+  },
 ]
 
 function BrowserMockup({ project }) {
@@ -73,7 +115,7 @@ function BrowserMockup({ project }) {
         </div>
         <div className="browser-url">
           <span className="url-lock">🔒</span>
-          <span>localhost/plant-pulse</span>
+          <span>localhost/{project.id}</span>
         </div>
         <div className="browser-menu">⋯</div>
       </div>
